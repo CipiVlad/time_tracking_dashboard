@@ -1,19 +1,8 @@
 import './scss/App.scss'
 import { useEffect, useState } from 'react'
+import dataBase from './assets/data.json'
 function App() {
-  const [data, setData] = useState([])
-
-  const fetchData = async () => {
-    const response = await fetch('http://localhost:5173/src/assets/data.json');
-    const data = await response.json();
-    setData(data)
-  }
-
-  console.log(data);
-
-  useEffect(() => {
-    fetchData()
-  }, [])
+  const [userData, setUserData] = useState(dataBase)
 
   return (
     <div className="App">
@@ -21,7 +10,7 @@ function App() {
       <header className="App-header">
         <h1>Time Tracking Dashboard</h1>
         {
-          data.map((item: any, index: number) => {
+          userData.map((item: any, index: number) => {
             return (
               <div key={index}>
                 <p>{item.title}</p>
