@@ -2,7 +2,12 @@ import './scss/App.scss'
 import { useEffect, useState } from 'react'
 import dataBase from './assets/data.json'
 function App() {
-  const [userData, setUserData] = useState(dataBase)
+
+  const [userData, setUserData] = useState([])
+
+  useEffect(() => {
+    setUserData(dataBase as [])
+  }, [])
 
   return (
     <div className="App">
@@ -10,7 +15,7 @@ function App() {
       <header className="App-header">
         <h1>Time Tracking Dashboard</h1>
         {
-          userData.map((item: any, index: number) => {
+          userData && userData.map((item: any, index: number) => {
             return (
               <div key={index}>
                 <p>{item.title}</p>
