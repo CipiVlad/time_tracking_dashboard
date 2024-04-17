@@ -1,32 +1,14 @@
 import './scss/App.scss'
 import { useEffect, useState } from 'react'
-import dataBase from '../public/data.json'
+import { data } from './assets/data'
 function App() {
+  const [timeframes, setTimeframes] = useState(data)
 
-  const [userData, setUserData] = useState([])
-
-  useEffect(() => {
-    setUserData(dataBase as [])
-  }, [])
+  console.log(timeframes);
 
   return (
     <div className="App">
-
-      <header className="App-header">
-        <h1>Time Tracking Dashboard</h1>
-        {
-          userData && userData.map((item: any, index: number) => {
-            return (
-              <div key={index}>
-                <p>{item.title}</p>
-                <p>{item.timeframes.daily.current}hrs</p>
-                <p>{item.timeframes.weekly.current}hrs</p>
-                <p>{item.timeframes.monthly.current}hrs</p>
-              </div>
-            )
-          })
-        }
-      </header>
+      <h1>{timeframes[0].title}</h1>
     </div>
   )
 }
