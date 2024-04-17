@@ -1,6 +1,6 @@
 import './scss/App.scss'
 import { useEffect, useState } from 'react'
-import dataBase from './assets/data.json'
+import dataBase from '../public/data.json'
 function App() {
 
   const [userData, setUserData] = useState([])
