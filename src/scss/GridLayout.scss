@@ -29,6 +29,7 @@
         .profile_container {
             grid-area: 1 / 1 / 3 / 2;
             background-color: $dark-blue;
+            box-shadow: 4px 25px 15px 6px rgba(0, 0, 0, 0.1);
 
             img {
                 border: 2px solid white;
@@ -105,12 +106,14 @@
             grid-area: 1 / 2 / 2 / 3;
             background-color: $light-red-work;
             display: grid;
+            box-shadow: 4px 25px 15px 6px rgba(0, 0, 0, 0.1);
         }
 
         .play_card_bg {
             grid-area: 1 / 3 / 2 / 4;
             background-color: $pale-blue;
             display: grid;
+            box-shadow: 4px 25px 15px 6px rgba(0, 0, 0, 0.1);
 
         }
 
@@ -118,6 +121,7 @@
             grid-area: 1 / 4 / 2 / 5;
             background-color: $light-red-study;
             display: grid;
+            box-shadow: 4px 25px 15px 6px rgba(0, 0, 0, 0.1);
 
         }
 
@@ -125,18 +129,21 @@
             grid-area: 2 / 2 / 3 / 3;
             background-color: $lime-green-exercise;
             display: grid;
+            box-shadow: 4px 25px 15px 6px rgba(0, 0, 0, 0.1);
         }
 
         .social_card_bg {
             grid-area: 2 / 3 / 3 / 4;
             background-color: $violet-social;
             display: grid;
+            box-shadow: 4px 25px 15px 6px rgba(0, 0, 0, 0.1);
         }
 
         .self_care_card_bg {
             grid-area: 2 / 4 / 3 / 5;
             background-color: $soft-orange-self-care;
             display: grid;
+            box-shadow: 4px 25px 15px 6px rgba(0, 0, 0, 0.1);
         }
 
         // end of parent grid container
