@@ -1,0 +1,21 @@
+@import './variables';
+
+
+.activity_container {
+    background-color: $dark-blue;
+
+    .activity_heading_flexbox {
+        display: flex;
+        justify-content: space-between;
+
+        .activity {}
+
+        .three_dots {
+            color: $desaturated-blue;
+        }
+    }
+
+    .activity_time {}
+
+    .activity_previous {}
+}

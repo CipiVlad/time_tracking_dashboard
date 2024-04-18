@@ -1,70 +1,112 @@
+@import '../scss/variables';
+
+
+// Layout to center content on screen
 .layout_wrapper {
     display: grid;
     justify-content: center;
     place-items: center;
     min-height: 100vh;
-}
-
-.parent {
-    width: 800px;
-    height: 500px;
-    background-color: firebrick;
-    padding: 20px;
-
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr 1.1fr;
-    gap: 25px 25px;
-    grid-auto-flow: row;
 
 
-    .a {
-        grid-area: 1 / 1 / 3 / 2;
-        background-color: blueviolet;
 
-        .inner_a {
-            height: 364px;
-            background: white;
+    // parent grid container 
+    .parent_grid {
+        width: 800px;
+        height: 500px;
+        background-color: $very-dark-blue;
+        padding: 20px;
+
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr 1.1fr;
+        gap: 25px 25px;
+        grid-auto-flow: row;
+
+        &>* {
+            border-radius: 6px;
         }
+
+        // Profile Container big box
+        .profile_container {
+            grid-area: 1 / 1 / 3 / 2;
+            background-color: $dark-blue;
+
+            img {
+                border: 2px solid white;
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+            }
+
+            .person_details {
+                height: 300px;
+                background: $blue;
+                border-radius: 6px;
+
+                p {
+                    color: white;
+                }
+            }
+
+            .timeframe {
+                background-color: $dark-blue;
+
+                p {
+                    color: white;
+                }
+            }
+        }
+
+
+        // svg images in the right corner is child of each activity container
+        // sibling with each Activity Card
+
+        .activity_image_position {
+            position: relative;
+            top: 0;
+            left: 100px;
+        }
+
+        // Activity Containers
+        // area children
+        .work_card_bg {
+            grid-area: 1 / 2 / 2 / 3;
+            background-color: $light-red-work;
+        }
+
+        .play_card_bg {
+            grid-area: 1 / 3 / 2 / 4;
+            background-color: $pale-blue;
+
+        }
+
+        .study_card_bg {
+            grid-area: 1 / 4 / 2 / 5;
+            background-color: $light-red-study;
+
+        }
+
+        .exercise_card_bg {
+            grid-area: 2 / 2 / 3 / 3;
+            background-color: $lime-green-exercise;
+
+        }
+
+        .social_card_bg {
+            grid-area: 2 / 3 / 3 / 4;
+            background-color: $violet-social;
+
+        }
+
+        .self_care_card_bg {
+            grid-area: 2 / 4 / 3 / 5;
+            background-color: $soft-orange-self-care;
+
+        }
+
+        // end of parent grid container
     }
 
-    .b {
-        grid-area: 1 / 2 / 2 / 3;
-        background-color: green;
-
-    }
-
-    .c {
-        grid-area: 1 / 3 / 2 / 4;
-        background-color: green;
-
-    }
-
-    .d {
-        grid-area: 1 / 4 / 2 / 5;
-        background-color: green;
-
-    }
-
-    .e {
-        grid-area: 2 / 2 / 3 / 3;
-        background-color: green;
-
-    }
-
-    .f {
-        grid-area: 2 / 3 / 3 / 4;
-        background-color: green;
-
-    }
-
-    .g {
-        grid-area: 2 / 4 / 3 / 5;
-        background-color: green;
-
-    }
-
-
-
-
+    // end of layout wrapper
 }
