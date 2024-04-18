@@ -11,6 +11,7 @@
     .activity_heading_flexbox {
         display: flex;
         justify-content: space-between;
+        align-items: end;
         padding: 2vh;
 
         .activity {
@@ -37,7 +38,7 @@
     }
 
     .activity_previous {
-        color: $desaturated-blue;
+        color: $pale-blue;
         font-weight: $font-weight-300;
         font-size: small;
         padding: 2vh 1vw 0;
