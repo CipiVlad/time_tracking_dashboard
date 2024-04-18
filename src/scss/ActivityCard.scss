@@ -8,14 +8,23 @@
         display: flex;
         justify-content: space-between;
 
-        .activity {}
+        .activity {
+            color: $pale-blue;
+            font-weight: $font-weight-300;
+        }
 
         .three_dots {
             color: $desaturated-blue;
         }
     }
 
-    .activity_time {}
+    .activity_time {
+        color: $pale-blue;
+        font-weight: $font-weight-300;
+    }
 
-    .activity_previous {}
+    .activity_previous {
+        color: $desaturated-blue;
+        font-weight: $font-weight-300;
+    }
 }

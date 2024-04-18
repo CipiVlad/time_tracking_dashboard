@@ -7,7 +7,29 @@ import studyImage from '../assets/images/icon-study.svg'
 import exerciseImage from '../assets/images/icon-exercise.svg'
 import socialImage from '../assets/images/icon-social.svg'
 import selfCareImage from '../assets/images/icon-self-care.svg'
+import { Work, Play, Study, Exercise, Social, SelfCare } from '../assets/data'
+import { useState } from 'react'
+
+
+
+
+
 const GridLayout = () => {
+    const chooseTimeFrame = ['daily', 'weekly', 'monthly']
+    const [optionTimeFrame, setOptionTimeFrame] = useState<string>()
+
+
+    // handle chosen time frame
+    const handleOptionTimeFrame = (optionTimeFrame: string) => {
+        if (optionTimeFrame === 'daily') {
+            setOptionTimeFrame(chooseTimeFrame[0])
+        } else if (optionTimeFrame === 'weekly') {
+            setOptionTimeFrame(chooseTimeFrame[1])
+        } else if (optionTimeFrame === 'monthly') {
+            setOptionTimeFrame(chooseTimeFrame[2])
+        }
+    }
+
     return (
 
         <div className="layout_wrapper">
@@ -21,36 +43,78 @@ const GridLayout = () => {
                         <p className='last_name'>Robson</p>
                     </div>
                     <div className="timeframe">
-                        <p className='daily'>Daily</p>
-                        <p className='weekly'>Weekly</p>
-                        <p className='monthly'>Monthly</p>
+                        <p className='daily' onClick={() => handleOptionTimeFrame(chooseTimeFrame[0])} >{chooseTimeFrame[0]}</p>
+                        <p className='weekly' onClick={() => handleOptionTimeFrame(chooseTimeFrame[1])}>{chooseTimeFrame[1]} </p>
+                        <p className='monthly' onClick={() => handleOptionTimeFrame(chooseTimeFrame[2])}>{chooseTimeFrame[2]}</p>
                     </div>
                 </div>
 
                 {/* activity cards */}
                 <div className="work_card_bg">
                     <img src={workImage} alt="icon-work" width={50} className='activity_image_position' />
-                    <ActivityCard />
+                    {Work &&
+                        <ActivityCard
+                            {...Work}
+                            timeframes={Work.timeframes}
+                            optionTimeFrame={optionTimeFrame || chooseTimeFrame[0]}
+                        />}
                 </div>
                 <div className="play_card_bg">
                     <img src={playImage} alt="icon-play" width={50} className='activity_image_position' />
-                    <ActivityCard />
+                    {
+                        Play &&
+                        <ActivityCard
+                            {...Play}
+                            timeframes={Play.timeframes}
+                            optionTimeFrame={optionTimeFrame || chooseTimeFrame[0]}
+                        />
+                    }
                 </div>
                 <div className="study_card_bg">
                     <img src={studyImage} alt="icon-study" width={50} className='activity_image_position' />
-                    <ActivityCard />
+                    {
+                        Study &&
+                        <ActivityCard
+                            {...Study}
+                            timeframes={Study.timeframes}
+                            optionTimeFrame={optionTimeFrame || chooseTimeFrame[0]}
+                        />
+                    }
                 </div>
                 <div className="exercise_card_bg">
                     <img src={exerciseImage} alt="icon-exercise" width={50} className='activity_image_position' />
-                    <ActivityCard />
+                    {
+                        Exercise &&
+                        <ActivityCard
+                            {...Exercise}
+                            timeframes={Exercise.timeframes}
+                            optionTimeFrame={optionTimeFrame || chooseTimeFrame[0]}
+                        />
+                    }
                 </div>
                 <div className="social_card_bg">
                     <img src={socialImage} alt="icon-social" width={50} className='activity_image_position' />
-                    <ActivityCard />
+                    {
+                        Social &&
+                        <ActivityCard
+                            {...Social}
+                            timeframes={Social.timeframes}
+                            optionTimeFrame={optionTimeFrame || chooseTimeFrame[0]}
+                        />
+                    }
+
                 </div>
                 <div className="self_care_card_bg">
                     <img src={selfCareImage} alt="icon-self-care" width={50} className='activity_image_position' />
-                    <ActivityCard />
+
+                    {
+                        SelfCare &&
+                        <ActivityCard
+                            {...SelfCare}
+                            timeframes={SelfCare.timeframes}
+                            optionTimeFrame={optionTimeFrame || chooseTimeFrame[0]}
+                        />
+                    }
                 </div>
 
             </div>
