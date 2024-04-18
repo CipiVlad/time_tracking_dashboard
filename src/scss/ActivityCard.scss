@@ -49,3 +49,54 @@
 .activity_container:hover {
     background-color: $hover-blue;
 }
+
+// end of parent grid container
+
+//media queries
+@media screen and (max-width:$mobile ) {
+
+    .activity_container {
+        background-color: $dark-blue;
+        // padding-bottom: 72px;
+        border-radius: 12px;
+        display: grid;
+
+
+        .activity_heading_flexbox {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            padding: 2vh;
+
+            .activity {
+                color: white;
+                font-weight: $font-weight-500;
+                font-size: small;
+            }
+
+            .three_dots {
+                color: $desaturated-blue;
+                cursor: pointer;
+            }
+
+            .three_dots:hover {
+                color: $pale-blue;
+            }
+        }
+
+        .activity_time {
+            color: white;
+            font-size: 46px;
+            font-weight: 100;
+            padding: 0 2vw;
+        }
+
+        .activity_previous {
+            color: $pale-blue;
+            font-weight: $font-weight-300;
+            font-size: small;
+            padding: 2vh 1vw 0;
+            margin-bottom: 3vh;
+        }
+    }
+}

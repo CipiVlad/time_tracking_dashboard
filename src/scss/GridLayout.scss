@@ -10,8 +10,8 @@
 
     // parent grid container 
     .parent_grid {
-        width: 900px;
-        height: 460px;
+        width: 1135px;
+        height: 395px;
         background-color: $very-dark-blue;
         padding: 20px;
 
@@ -40,7 +40,7 @@
 
             .person_details {
                 background: $blue;
-                border-radius: 6px;
+                border-radius: 12px;
                 padding: 5vh 3vh 4vw;
                 margin-bottom: 1em;
 
@@ -95,7 +95,6 @@
         .activity_image_position {
             position: relative;
             top: 0;
-            left: 100px;
             left: 140px;
             height: 54px;
         }
@@ -167,7 +166,6 @@
             display: block;
             ;
 
-
             // Profile Container big box
             .profile_container {
                 width: 100%;
@@ -192,11 +190,14 @@
                         "img p2 p3";
                     padding: 5vh;
                     border-radius: 12px;
+                    gap: 12px;
 
                     img {
                         grid-area: img;
                         justify-content: baseline;
                         place-items: baseline;
+                        width: 80px;
+                        height: 80px;
 
                     }
 
@@ -238,6 +239,47 @@
                         color: white
                     }
                 }
+            }
+
+
+
+            // Activity Containers
+            // area children
+            .work_card_bg {
+                margin: 5vh 0;
+                border-radius: 8px;
+                border-radius: 12px;
+            }
+
+            .play_card_bg {
+                margin: 5vh 0;
+                border-radius: 8px;
+                border-radius: 12px;
+            }
+
+            .study_card_bg {
+                margin: 5vh 0;
+                border-radius: 8px;
+                border-radius: 12px;
+            }
+
+            .exercise_card_bg {
+                margin: 5vh 0;
+                border-radius: 8px;
+                border-radius: 12px;
+            }
+
+            .social_card_bg {
+                margin: 5vh 0;
+                border-radius: 8px;
+                border-radius: 12px;
+            }
+
+            .self_care_card_bg {
+                margin: 5vh 0;
+                border-radius: 8px;
+                border-radius: 12px;
+                margin-bottom: 5vh;
             }
 
         }
