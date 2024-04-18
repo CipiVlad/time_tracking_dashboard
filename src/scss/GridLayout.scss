@@ -110,36 +110,39 @@
         .work_card_bg {
             grid-area: 1 / 2 / 2 / 3;
             background-color: $light-red-work;
+            display: grid;
         }
 
         .play_card_bg {
             grid-area: 1 / 3 / 2 / 4;
             background-color: $pale-blue;
+            display: grid;
 
         }
 
         .study_card_bg {
             grid-area: 1 / 4 / 2 / 5;
             background-color: $light-red-study;
+            display: grid;
 
         }
 
         .exercise_card_bg {
             grid-area: 2 / 2 / 3 / 3;
             background-color: $lime-green-exercise;
-
+            display: grid;
         }
 
         .social_card_bg {
             grid-area: 2 / 3 / 3 / 4;
             background-color: $violet-social;
-
+            display: grid;
         }
 
         .self_care_card_bg {
             grid-area: 2 / 4 / 3 / 5;
             background-color: $soft-orange-self-care;
-
+            display: grid;
         }
 
         // end of parent grid container
