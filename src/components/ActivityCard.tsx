@@ -16,11 +16,10 @@ const ActivityCard = (props: Data & OptionTimeFrameProps) => {
                 <div className='three_dots'>...</div>
             </div>
             <h2 className="activity_time">
-
                 {
-                    props.optionTimeFrame === 'daily'
+                    props.optionTimeFrame === 'Daily'
                         ? timeframes.daily.current
-                        : props.optionTimeFrame === 'weekly'
+                        : props.optionTimeFrame === 'Weekly'
                             ? timeframes.weekly.current
                             : timeframes.monthly.current
                 } hrs
@@ -28,9 +27,9 @@ const ActivityCard = (props: Data & OptionTimeFrameProps) => {
             </h2>
             <p className="activity_previous">Last Week -
                 {
-                    props.optionTimeFrame === 'daily'
+                    props.optionTimeFrame === 'Daily'
                         ? timeframes.daily.previous
-                        : props.optionTimeFrame === 'weekly'
+                        : props.optionTimeFrame === 'Weekly'
                             ? timeframes.weekly.previous
                             : timeframes.monthly.previous
                 }hrs</p>

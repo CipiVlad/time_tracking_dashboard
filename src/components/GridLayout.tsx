@@ -10,22 +10,19 @@ import selfCareImage from '../assets/images/icon-self-care.svg'
 import { Work, Play, Study, Exercise, Social, SelfCare } from '../assets/data'
 import { useState } from 'react'
 
-
-
-
-
 const GridLayout = () => {
-    const chooseTimeFrame = ['daily', 'weekly', 'monthly']
-    const [optionTimeFrame, setOptionTimeFrame] = useState<string>()
 
+    //switch time frame dynamically
+    const chooseTimeFrame = ['Daily', 'Weekly', 'Monthly']
+    const [optionTimeFrame, setOptionTimeFrame] = useState<string>()
 
     // handle chosen time frame
     const handleOptionTimeFrame = (optionTimeFrame: string) => {
-        if (optionTimeFrame === 'daily') {
+        if (optionTimeFrame === 'Daily') {
             setOptionTimeFrame(chooseTimeFrame[0])
-        } else if (optionTimeFrame === 'weekly') {
+        } else if (optionTimeFrame === 'Weekly') {
             setOptionTimeFrame(chooseTimeFrame[1])
-        } else if (optionTimeFrame === 'monthly') {
+        } else if (optionTimeFrame === 'Monthly') {
             setOptionTimeFrame(chooseTimeFrame[2])
         }
     }
@@ -43,9 +40,10 @@ const GridLayout = () => {
                         <p className='last_name'>Robson</p>
                     </div>
                     <div className="timeframe">
-                        <p className='daily' onClick={() => handleOptionTimeFrame(chooseTimeFrame[0])} >{chooseTimeFrame[0]}</p>
-                        <p className='weekly' onClick={() => handleOptionTimeFrame(chooseTimeFrame[1])}>{chooseTimeFrame[1]} </p>
-                        <p className='monthly' onClick={() => handleOptionTimeFrame(chooseTimeFrame[2])}>{chooseTimeFrame[2]}</p>
+                        <p className={optionTimeFrame === 'Daily' ? 'active' : ''}
+                            onClick={() => handleOptionTimeFrame(chooseTimeFrame[0])} >{chooseTimeFrame[0]}</p>
+                        <p className={optionTimeFrame === 'Weekly' ? 'active' : ''} onClick={() => handleOptionTimeFrame(chooseTimeFrame[1])}>{chooseTimeFrame[1]} </p>
+                        <p className={optionTimeFrame === 'Monthly' ? 'active' : ''} onClick={() => handleOptionTimeFrame(chooseTimeFrame[2])}>{chooseTimeFrame[2]}</p>
                     </div>
                 </div>
 
@@ -116,7 +114,6 @@ const GridLayout = () => {
                         />
                     }
                 </div>
-
             </div>
         </div>
     )

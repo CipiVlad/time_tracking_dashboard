@@ -15,6 +15,11 @@
 
         .three_dots {
             color: $desaturated-blue;
+            cursor: pointer;
+        }
+
+        .three_dots:hover {
+            color: $pale-blue;
         }
     }
 
