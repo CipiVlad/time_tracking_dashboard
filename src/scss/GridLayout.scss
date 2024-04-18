@@ -151,3 +151,97 @@
 
     // end of layout wrapper
 }
+
+// responsive media queries
+
+@media screen and (max-width:$mobile ) {
+
+    .layout_wrapper {
+        display: block;
+
+        .parent_grid {
+            width: 100%;
+            height: 0;
+            background-color: $very-dark-blue;
+            padding: 20px;
+            display: block;
+            ;
+
+
+            // Profile Container big box
+            .profile_container {
+                width: 100%;
+                border-radius: 0;
+                margin: 5vh 0;
+                border-radius: 12px;
+
+                img {
+                    border: 2px solid white;
+                    border-radius: 50%;
+                    width: 60px;
+                    height: 60px;
+                }
+
+
+                .person_details {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-rows: 1fr 1fr;
+                    grid-template-areas:
+                        "img p1 p1"
+                        "img p2 p3";
+                    padding: 5vh;
+                    border-radius: 12px;
+
+                    img {
+                        grid-area: img;
+                        justify-content: baseline;
+                        place-items: baseline;
+
+                    }
+
+
+                    p:nth-of-type(1) {
+                        grid-area: p1;
+                        margin: 1vh 0;
+                        font-size: medium;
+                    }
+
+                    p:nth-of-type(2) {
+                        grid-area: p2;
+                    }
+
+                    p:nth-of-type(3) {
+                        grid-area: p3;
+                    }
+                }
+
+                .timeframe {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    padding: 2vh 5vw;
+                    border-radius: 12px;
+
+                    p {
+                        color: $desaturated-blue;
+                        font-weight: $font-weight-400;
+                        font-size: $font-size;
+                    }
+
+                    p:hover {
+                        color: white;
+                        cursor: pointer;
+                    }
+
+                    .active {
+                        color: white
+                    }
+                }
+            }
+
+        }
+    }
+
+
+}
