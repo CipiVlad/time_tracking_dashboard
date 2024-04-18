@@ -13,8 +13,8 @@ import { useState } from 'react'
 const GridLayout = () => {
 
     //switch time frame dynamically
-    const chooseTimeFrame = ['Daily', 'Weekly', 'Monthly']
-    const [optionTimeFrame, setOptionTimeFrame] = useState<string>()
+    const chooseTimeFrame: string[] = ['Daily', 'Weekly', 'Monthly']
+    const [optionTimeFrame, setOptionTimeFrame] = useState<string>(chooseTimeFrame[1])
 
     // handle chosen time frame
     const handleOptionTimeFrame = (optionTimeFrame: string) => {

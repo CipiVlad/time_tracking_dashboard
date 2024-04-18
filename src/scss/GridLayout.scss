@@ -8,8 +8,6 @@
     place-items: center;
     min-height: 100vh;
 
-
-
     // parent grid container 
     .parent_grid {
         width: 900px;
@@ -40,10 +38,10 @@
             }
 
             .person_details {
-                height: 260px;
                 background: $blue;
                 border-radius: 6px;
-                padding: 4vh;
+                padding: 5vh 3vh 4vw;
+                margin-bottom: 2em;
 
                 p {
                     color: white;
@@ -68,7 +66,7 @@
             .timeframe {
                 display: flex;
                 flex-direction: column;
-                gap: 2svh;
+                gap: 2vh;
                 background-color: $dark-blue;
                 padding: 4vh;
 
@@ -86,12 +84,6 @@
                 .active {
                     color: white
                 }
-
-                // p:nth-of-type(1),
-                // p:nth-of-type(2) {
-                //     margin-bottom: 2vh;
-                // }
-
             }
         }
 

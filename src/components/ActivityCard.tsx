@@ -22,7 +22,7 @@ const ActivityCard = (props: Data & OptionTimeFrameProps) => {
                         : props.optionTimeFrame === 'Weekly'
                             ? timeframes.weekly.current
                             : timeframes.monthly.current
-                } hrs
+                }hrs
 
             </h2>
             <p className="activity_previous">Last Week -

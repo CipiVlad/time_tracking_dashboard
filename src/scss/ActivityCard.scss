@@ -4,19 +4,19 @@
 .activity_container {
     background-color: $dark-blue;
     // padding-bottom: 72px;
-    border-radius: 6px;
+    border-radius: 4px;
     display: grid;
     grid-template-rows: 1fr 1fr;
-    gap: 5vh;
-
 
     .activity_heading_flexbox {
         display: flex;
         justify-content: space-between;
+        padding: 2vh;
 
         .activity {
-            color: $pale-blue;
-            font-weight: $font-weight-300;
+            color: white;
+            font-weight: $font-weight-500;
+            font-size: small;
         }
 
         .three_dots {
@@ -30,12 +30,21 @@
     }
 
     .activity_time {
-        color: $pale-blue;
-        font-weight: $font-weight-300;
+        color: white;
+        font-size: 46px;
+        font-weight: 100;
+        padding: 0 2vw;
     }
 
     .activity_previous {
         color: $desaturated-blue;
         font-weight: $font-weight-300;
+        font-size: small;
+        padding: 2vh 1vw 0;
+        margin-bottom: 3vh;
     }
+}
+
+.activity_container:hover {
+    background-color: $hover-blue;
 }
