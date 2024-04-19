@@ -22,7 +22,7 @@
         grid-auto-flow: row;
 
         &>* {
-            border-radius: 6px;
+            border-radius: 12px;
         }
 
         // Profile Container big box
@@ -41,8 +41,8 @@
             .person_details {
                 background: $blue;
                 border-radius: 12px;
-                padding: 14vh 3vh 4vw;
-                margin-bottom: 1em;
+                padding: 7vh 3vh 9vh;
+                margin-bottom: 2em;
 
                 p {
                     color: white;
@@ -69,12 +69,12 @@
                 flex-direction: column;
                 gap: 2vh;
                 background-color: $dark-blue;
-                padding: 4vh;
+                padding: 0 4vh;
 
                 p {
                     color: $desaturated-blue;
                     font-weight: $font-weight-300;
-                    font-size: 13px;
+                    // font-size: 13px;
                 }
 
                 p:hover {

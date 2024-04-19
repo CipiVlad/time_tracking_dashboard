@@ -3,9 +3,7 @@
 
 .activity_container {
     background-color: $dark-blue;
-    // padding-bottom: 72px;
-    border-radius: 4px;
-    display: grid;
+    border-radius: 9px;
     grid-template-rows: 1fr 1fr;
 
     .activity_heading_flexbox {
