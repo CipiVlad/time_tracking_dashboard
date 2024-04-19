@@ -193,6 +193,7 @@
                     gap: 12px;
 
                     img {
+                        border: 3px solid white;
                         grid-area: img;
                         justify-content: baseline;
                         place-items: baseline;
@@ -206,6 +207,7 @@
                         grid-area: p1;
                         margin: 1vh 0;
                         font-size: medium;
+                        font-weight: $font-weight-500;
                     }
 
                     p:nth-of-type(2) {
@@ -256,15 +258,34 @@
 
                 .activity_heading_flexbox {
                     display: flex;
+
+                    .activity {
+                        color: white;
+                        font-weight: 500;
+                        font-size: 22px;
+                    }
+
+                    .three_dots {
+                        font-size: 36px;
+                    }
                 }
 
-                .activity_time {
-                    display: inline-block;
-                }
+                .activity_time_flex_container {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
 
-                .activity_previous {
-                    display: inline;
-                    margin-left: 30%;
+                    .activity_time {
+                        // display: inline-block;
+                        font-size: 40px;
+                    }
+
+                    .activity_previous {
+                        // display: inline;
+                        // margin-left: 30%;
+                        font-size: medium;
+                        font-weight: $font-weight-400;
+                    }
                 }
             }
 
