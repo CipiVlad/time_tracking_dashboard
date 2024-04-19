@@ -242,6 +242,33 @@
             }
 
 
+            .activity_image_position {
+                position: relative;
+                top: 0;
+                left: 280px;
+                height: 54px;
+            }
+
+            //for all activity containers
+            .activity_container {
+                display: block;
+                padding-bottom: 2vh;
+
+                .activity_heading_flexbox {
+                    display: flex;
+                }
+
+                .activity_time {
+                    display: inline-block;
+                }
+
+                .activity_previous {
+                    display: inline;
+                    margin-left: 30%;
+                }
+            }
+
+
 
             // Activity Containers
             // area children
@@ -249,6 +276,8 @@
                 margin: 5vh 0;
                 border-radius: 8px;
                 border-radius: 12px;
+
+
             }
 
             .play_card_bg {
