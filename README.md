@@ -10,13 +10,10 @@ This is a solution to the [Time tracking dashboard challenge on Frontend Mentor]
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
+  - [Code Snippets](#code-snippets)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -30,83 +27,109 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![desktop](./public/screenshot_desktop.png)
+![mobile](./public/screenshot_mobile.png)
 
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Add live site URL here](https://cipivlad.github.io/time_tracking_dashboard/)
 
 ## My process
 
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
 - Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+- Grid
+- Layout - First Approach
+- [React](https://react.dev) - JS library
+- Typescript
+- vite
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
-### What I learned
+### Code Snippets
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+#### using a card component for conditionally rendering data when taking props from parent components
 
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+
+
+import '../scss/ActivityCard.scss'
+import { Data } from '../assets/data'
+
+
+type OptionTimeFrameProps = {
+    optionTimeFrame: string
 }
+
+const ActivityCard = (props: Data & OptionTimeFrameProps) => {
+    const { timeframes } = props
+
+    return (
+        <div className="activity_container">
+            <div className="activity_heading_flexbox">
+                <p className='activity'>{props.title}</p>
+                <div className='three_dots'>...</div>
+            </div>
+            <div className="activity_time_flex_container">
+                <h2 className="activity_time">
+                    {
+                        props.optionTimeFrame === 'Daily'
+                            ? timeframes.daily.current
+                            : props.optionTimeFrame === 'Weekly'
+                                ? timeframes.weekly.current
+                                : timeframes.monthly.current
+                    }hrs
+                </h2>
+                <p className="activity_previous">Last Week -
+                    {
+                        props.optionTimeFrame === 'Daily'
+                            ? timeframes.daily.previous
+                            : props.optionTimeFrame === 'Weekly'
+                                ? timeframes.weekly.previous
+                                : timeframes.monthly.previous
+                    }hrs</p>
+            </div>
+        </div>
+    )
+}
+export default ActivityCard
+```
+#### parent component spreading data to card
+
+```js
+
+                {/* activity cards */}
+                <div className="work_card_bg">
+                    <img src={workImage} alt="icon-work" width={50} className='activity_image_position' />
+                    {Work &&
+                        <ActivityCard
+                            {...Work}
+                            timeframes={Work.timeframes}
+                            optionTimeFrame={optionTimeFrame || chooseTimeFrame[0]}
+                        />}
+                </div>
+                <div className="play_card_bg"> ...
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+Grid and Flex are such a great help during the devloping process... there's still so much to learn about it. I'm enjoying the process!
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [Grid Generator](https://grid.layoutit.com/) - This helped me diving deeper in CSS - Flex and Grid Box and figuring grid areas out.
+- [CSS - Tricks](https://css-tricks.com/) - This is an amazing site which always helped me styling apps. I'd recommend it to anyone learning css.
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Website - [Portfolio](https://cipivlad.github.io/myportfoliosite/)
+- Frontend Mentor - [@CipiVlad](https://www.frontendmentor.io/profile/CipiVlad)
+- DEV.to [https://dev.to/cipivlad](https://dev.to/cipivlad)
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+## Tags
 
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+#react, #typescript, #scss, #vite, #github, #grid, #flexbox
